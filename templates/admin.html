@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Honeypot Logs</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+
+<header>
+    <h2>🛡 Honeypot Security Logs</h2>
+    <a href="/">← Back to Login</a>
+</header>
+
+<div class="stats">
+    <div class="box">Total Attempts<br><b>{{ total }}</b></div>
+    <div class="box">Unique IPs<br><b>{{ unique_ips }}</b></div>
+    <div class="box">Last Attempt<br><b>{{ last_time }}</b></div>
+</div>
+
+<h3>Captured Credentials</h3>
+
+<input type="text" placeholder="Search username or IP..." class="search">
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Timestamp</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>IP</th>
+        <th>User Agent</th>
+    </tr>
+
+    {% for row in logs %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[6] }}</td>
+        <td>{{ row[2] }}</td>
+        <td class="danger">{{ row[3] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[4][:40] }}...</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
 
