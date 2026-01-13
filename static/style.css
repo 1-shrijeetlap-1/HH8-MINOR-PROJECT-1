@@ -81,18 +81,19 @@ button {
 .footer span {
     color: #2563eb;
 }
-.admin {
+.admin-access {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
-.admin a {
+.admin-access a {
     font-size: 12px;
     color: #9ca3af;
     text-decoration: none;
 }
 
-.admin a:hover {
+.admin-access a:hover {
     color: #2563eb;
 }
+
 
