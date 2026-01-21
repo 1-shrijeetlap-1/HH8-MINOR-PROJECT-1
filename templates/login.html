@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>Secure Login</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -13,28 +17,35 @@
         <p>Please enter your credentials to access your dashboard.</p>
 
         <form method="POST">
-            <label>USERNAME</label>
-            <input type="text" name="username" placeholder="name@company.com" required>
-
-            <div class="row">
-                <label>PASSWORD</label>
-                <a href="#">Forgot password?</a>
+            <div class="input-group">
+                <p3>USERNAME</p3>
+                <input type="text" name="username" placeholder="name@company.com" required>
             </div>
-            <input type="password" name="password" placeholder="password" required>
+
+            <div class="input-group">
+                <div class="row">
+                    <p3>PASSWORD</p3>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <input type="password" name="password" placeholder="••••••••" required>
+            </div>
 
             <button type="submit">Sign In →</button>
         </form>
 
         <p class="footer">
-    Don't have an account? <span>Contact Support</span>
-</p>
+            Don't have an account? <span>Contact Support</span>
+        </p>
 
-<hr>
+        <hr>
 
-<div class="admin-access">
-    <a href="/admin">Admin Access</a>
-</div>
+        <div class="admin-access">
+            <a href="/admin">
+                <span>🛡️</span> Admin Access
+            </a>
+        </div>
 
+        <div class="watermark">SECURE</div>
     </div>
 </div>
 
