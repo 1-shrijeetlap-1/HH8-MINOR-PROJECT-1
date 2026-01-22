@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Honeypot Logs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/dashboard.css">
 </head>
+
 <body>
 
-<header>
-    <h2>🛡 Honeypot Security Logs</h2>
-    <a href="/" style="text-decoration:none;color:#2563eb;">← Back to Login</a>
-</header>
+    <header>
+        <h2>🛡 Honeypot Security Logs</h2>
+        <a href="/" style="text-decoration:none;">← Back to Login</a>
+    </header>
 
-<div class="stats">
-    <div class="box">Total Attempts<br><b>{{ total }}</b></div>
-    <div class="box">Unique IPs<br><b>{{ unique_ips }}</b></div>
-    <div class="box">Last Attempt<br><b>{{ last_time }}</b></div>
-</div>
+    <div class="main-content">
+        <div class="stats">
+            <div class="box">
+                <div class="box-label">Total Attempts</div>
+                <b>{{ total }}</b>
+            </div>
+            <div class="box">
+                <div class="box-label">Unique IPs</div>
+                <b>{{ unique_ips }}</b>
+            </div>
+            <div class="box">
+                <div class="box-label">Last Attempt</div>
+                <b>{{ last_time }}</b>
+            </div>
+        </div>
 
-<h3>Captured Credentials</h3>
+        <h3>Captured Credentials</h3>
 
-<input type="text" placeholder="Search username or IP..." class="search">
+        <input type="text" placeholder="Search username or IP..." class="search">
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Timestamp</th>
-        <th>Username</th>
-        <th>Password</th>
-        <th>IP</th>
-        <th>User Agent</th>
-    </tr>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Timestamp</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>IP</th>
+                    <th>User Agent</th>
+                </tr>
 
-    {% for row in logs %}
-    <tr>
-        <td>{{ row[0] }}</td>
-        <td>{{ row[6] }}</td>
-        <td>{{ row[2] }}</td>
-        <td class="danger">{{ row[3] }}</td>
-        <td>{{ row[1] }}</td>
-        <td>{{ row[4][:40] }}...</td>
-    </tr>
-    {% endfor %}
-</table>
+                {% for row in logs %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td><span class="danger">{{ row[3] }}</span></td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[4][:40] }}...</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
 
 </body>
+
 </html>
