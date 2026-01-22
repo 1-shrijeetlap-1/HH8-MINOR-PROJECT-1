@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Admin Login</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
 </head>
-<body>
-<div class="container">
-    <div class="card">
-        <h3>Admin Access</h3>
-        <form method="post" action="/admin">
-    <input type="password" name="admin_key" placeholder="Admin Key" required>
-    <button type="submit">Login</button>
-</form>
 
-        {% if error %}<p class="error">{{ error }}</p>{% endif %}
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="icon">🛡️</div>
+            <h2>Admin Access</h2>
+            <p>Please enter the administrator key to proceed.</p>
+
+            <form method="post" action="/admin">
+                <div class="input-group">
+                    <p3>ADMIN KEY</p3>
+                    <input type="password" name="admin_key" placeholder="Enter key..." required>
+                </div>
+                <button type="submit">Unlock Dashboard</button>
+            </form>
+
+            {% if error %}<div class="error" style="color: var(--error-color); text-align: center; margin-top: 15px;">{{
+                error }}</div>{% endif %}
+
+            <div class="footer">
+                <a href="/">← Back to Home</a>
+            </div>
+
+            <div class="watermark">ADMIN</div>
+        </div>
     </div>
-</div>
 </body>
+
 </html>
