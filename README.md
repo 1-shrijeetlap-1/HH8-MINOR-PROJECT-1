@@ -60,11 +60,16 @@ python -m venv .venv
     ```bash
     python app.py
     ```
+<img width="1917" height="911" alt="Screenshot 2026-01-31 182538" src="https://github.com/user-attachments/assets/2ace7951-e1ad-4078-8c22-c7f89e8246fd" />
 
 2.  **Access the Honeypot**:
     Open your browser and navigate to `http://127.0.0.1:5000/`.
     -   Any attempt to log in here will be recorded.
     -   The user will always see an "Invalid username or password" error.
+
+      <img width="1917" height="918" alt="Screenshot 2026-01-31 182600" src="https://github.com/user-attachments/assets/64afdb44-a9dc-4ac6-91e2-0c599e382b9e" />
+
+<img width="1916" height="912" alt="Screenshot 2026-01-31 182640" src="https://github.com/user-attachments/assets/a6913655-44f9-4d37-9602-72e57135463c" />
 
 3.  **Access the Admin Dashboard**:
     Navigate to `http://127.0.0.1:5000/admin`.
